@@ -9,7 +9,7 @@ const NavBarStyled = styled.header`
   left: 0;
   z-index: 999;
   height: 80px;
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -39,7 +39,6 @@ const SignInButton = styled.button`
   gap: 5px;
   background-color: transparent;
   border: none;
-  cursor: pointer;
 `;
 
 const SignInImg = styled.img`
