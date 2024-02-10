@@ -9,6 +9,8 @@ export const GlobalStyle = createGlobalStyle`
   *::before,
   *::after {
     box-sizing:inherit;
+    margin: 0;
+    padding: 0;
   }
 
   body {
@@ -16,7 +18,7 @@ export const GlobalStyle = createGlobalStyle`
     background-color: #f0f0f0;
     font-family: Roboto, sans-serif;
     font-size: 20px;
-    coplor: black;
+    color: black;
   }
 
   img{

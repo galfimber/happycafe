@@ -29,7 +29,7 @@ const Item = styled.li`
     background-color: black;
     opacity: 30%;
     z-index: -1;
-    transition: opacity .1s ease-in
+    transition: opacity 0.1s ease-in;
   }
   &:hover {
     cursor: pointer;
@@ -39,10 +39,10 @@ const Item = styled.li`
   }
 `;
 
-export const ListItem = ({ itemList }) => (
+export const ListItem = ({ itemList, setOpenItem }) => (
   <List>
     {itemList.map((item) => (
-      <Item key={item.id} img={item.img}>
+      <Item key={item.id} img={item.img} onClick={() => setOpenItem(item)}>
         <p>{item.name}</p>
         <p>
           {item.price.toLocaleString("ru-RU", {
