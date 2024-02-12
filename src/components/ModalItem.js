@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { ButtonCheckout } from "./ButtonCheckout";
 
 const Overlay = styled.div`
   display: flex;
@@ -45,20 +46,6 @@ const ModalInfo = styled.div`
   justify-content: space-between;
 `;
 
-const ModalBtn = styled.button`
-  align-self: center;
-  width: 250px;
-  background-color: #299b01;
-  border: none;
-  font-size: 21px;
-  line-height: 65px;
-  color: #fff;
-  transition: background-color 0.1s ease-in;
-  &:hover {
-    background-color: #32b305;
-  }
-`;
-
 export const ModatItem = ({ openItem, setOpenItem }) => {
   function closeModal(e) {
     if (e.target.id === "overlay") {
@@ -81,7 +68,7 @@ export const ModatItem = ({ openItem, setOpenItem }) => {
               })}
             </h3>
           </ModalInfo>
-          <ModalBtn>Добавить</ModalBtn>
+          <ButtonCheckout>Добавить</ButtonCheckout>
         </ModalBody>
       </Modal>
     </Overlay>
