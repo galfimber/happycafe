@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { ButtonCheckout } from "./ButtonCheckout";
+import { ButtonCheckout } from "../Style/ButtonCheckout";
 
 const Overlay = styled.div`
   display: flex;
@@ -46,14 +46,22 @@ const ModalInfo = styled.div`
   justify-content: space-between;
 `;
 
-export const ModatItem = ({ openItem, setOpenItem }) => {
-  function closeModal(e) {
+export const ModatItem = ({ openItem, setOpenItem, orders, setOrders }) => {
+  const closeModal = (e) => {
     if (e.target.id === "overlay") {
       setOpenItem(null);
     }
-  }
+  };
 
-  if (!openItem) return null;
+  const order = {
+    ...openItem,
+  };
+
+  const addToOrder = () => {
+    setOrders([...orders, order]);
+    setOpenItem(null);
+  };
+
   return (
     <Overlay id="overlay" onClick={closeModal}>
       <Modal>
@@ -68,7 +76,7 @@ export const ModatItem = ({ openItem, setOpenItem }) => {
               })}
             </h3>
           </ModalInfo>
-          <ButtonCheckout>Добавить</ButtonCheckout>
+          <ButtonCheckout onClick={addToOrder}>Добавить</ButtonCheckout>
         </ModalBody>
       </Modal>
     </Overlay>
