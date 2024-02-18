@@ -14,14 +14,3 @@ export const formatCurrency = (price) =>
     style: "currency",
     currency: "RUB",
   });
-
-export const totalToppings = (order) => {
-  const checkedTopping =
-    order.topping && order.topping.filter((item) => item.checked);
-
-  const listTopping = [];
-
-  checkedTopping.forEach((item) => listTopping.push(item.name.toLowerCase()));
-
-  return listTopping;
-};
