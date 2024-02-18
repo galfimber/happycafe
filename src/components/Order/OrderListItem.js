@@ -8,7 +8,14 @@ import { Choices } from "../Modal/Choices";
 const OrderItemStyled = styled.li`
   display: flex;
   flex-wrap: wrap;
-  margin: 15px 0;
+  margin: 5px 0;
+  border: 1px solid transparent;
+  padding: 5px;
+  cursor: pointer;
+  &:hover {
+    border: 1px solid #cacaca;
+    box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 1);
+  }
 `;
 
 const TrashButtom = styled.button`
@@ -44,14 +51,14 @@ const ItemPrice = styled.span`
   min-width: 65px;
 `;
 
-export const OrderListItem = ({ order, index, deleteItem }) => {
+export const OrderListItem = ({ order, index, deleteItem, setOpenItem }) => {
   const topping = order.topping
     .filter((item) => item.checked)
     .map((item) => item.name)
     .join(", ");
 
   return (
-    <OrderItemStyled>
+    <OrderItemStyled onClick={() => setOpenItem({ ...order, index })}>
       <ItemName>{order.name}</ItemName>
       <span>{order.count}</span>
       <ItemPrice>{formatCurrency(totalPriceItems(order))}</ItemPrice>
