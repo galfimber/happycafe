@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/happycafe/static/css/main.e6c13ad2.css",
+    "main.js": "/happycafe/static/js/main.152ae8e5.js",
+    "static/media/banner.png": "/happycafe/static/media/banner.9b6cf3eef84baf1886a6.png",
+    "static/media/logo.svg": "/happycafe/static/media/logo.03f3b0f4561e6845585a0111fa787675.svg",
+    "static/media/trash.svg": "/happycafe/static/media/trash.08fdcf71d6810c4cb246da4836c92812.svg",
+    "static/media/sign.svg": "/happycafe/static/media/sign.b9361011ff9df3089884129d932f655b.svg",
+    "index.html": "/happycafe/index.html",
+    "main.e6c13ad2.css.map": "/happycafe/static/css/main.e6c13ad2.css.map",
+    "main.152ae8e5.js.map": "/happycafe/static/js/main.152ae8e5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.152ae8e5.js"
+  ]
+}
