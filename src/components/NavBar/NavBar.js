@@ -50,15 +50,51 @@ const SignInText = styled.div`
   color: #fff;
 `;
 
-export const NavBar = () => (
+const SignOutButton = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: transparent;
+  border: none;
+`;
+
+const Figure = styled.figure`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const Figcaption = styled.figcaption`
+  color: white;
+`;
+
+const SignOutText = styled.span`
+  font-size: 15px;
+  cursor: pointer;
+`;
+
+export const NavBar = ({ authentication, logIn, logOut }) => (
   <NavBarStyled>
     <Logo>
       <ImgLogo src={logoImg} alt="logo"></ImgLogo>
       <H1>HappyCafe</H1>
     </Logo>
-    <SignInButton>
-      <SignInImg src={logoSignIn} alt="SignIn"></SignInImg>
-      <SignInText>Войти</SignInText>
-    </SignInButton>
+    {authentication ? (
+      <SignOutButton>
+        <Figure>
+          <SignInImg
+            src={logoSignIn}
+            alt={authentication.displayName}
+          ></SignInImg>
+          <Figcaption>{authentication.displayName}</Figcaption>
+        </Figure>
+        <SignOutText onClick={logOut}>Выйти</SignOutText>
+      </SignOutButton>
+    ) : (
+      <SignInButton onClick={logIn}>
+        <SignInImg src={logoSignIn} alt="SignIn"></SignInImg>
+        <SignInText>Войти</SignInText>
+      </SignInButton>
+    )}
   </NavBarStyled>
 );
